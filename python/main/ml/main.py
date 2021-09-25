@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -13,9 +15,9 @@ batch_size = 5  # 説明がめんどくさいので省略。一度に処理す�
 epochs = 3  # デバッグ用。本学習では増やす。いっぱいあるほど基本的に良い。過学習に気をつける。
 model_path = "https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet21k_ft1k_b1/feature_vector/2"
 
-mldata_dir = "mldata/train"
+mldata_dir = "mldata/images"
 target_class = ["cola", "calpico"]
-train_dir = [os.path.join(mldata_dir, i_target) for i_target in target_class]
+train_dir = [os.path.join(mldata_dir, "train", i_target) for i_target in target_class]
 test_dir = train_dir  # TODO: なんとかする。
 
 
